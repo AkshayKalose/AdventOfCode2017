@@ -1,7 +1,7 @@
 CXX = g++
 CXXFLAGS = -Wall -g
 
-PROGRAMS = 1.cpp 1-2.cpp 2.cpp 2-2.cpp 3.cpp 3-2.cpp
+PROGRAMS = 1.cpp 1-2.cpp 2.cpp 2-2.cpp 3.cpp 3-2.cpp 4.cpp 4-2.cpp
 EXTRAS = helpers.cpp
 HEADERS = $(EXTRAS:.cpp=.h)
 SOURCES = $(PROGRAMS) $(EXTRAS)
@@ -26,6 +26,12 @@ default: $(TARGETS)
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 3-2: 3-2.o helpers.o
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+4: 4.o helpers.o
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+4-2: 4-2.o helpers.o
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 .PHONY: clean
